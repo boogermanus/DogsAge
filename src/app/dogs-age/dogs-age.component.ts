@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CalculationConstants } from './models/calculation-constants';
+import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-dogs-age',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DogsAgeComponent implements OnInit {
 
-  constructor() { }
+  calculationTypes: any[] = CalculationConstants.calculationTypes;
+  calculationType = new FormControl(CalculationConstants.DEFAULT_VALUE);
+  form: FormGroup;
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      calculationType: this.calculationType
+    });
   }
 
 }
