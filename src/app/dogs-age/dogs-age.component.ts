@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CalculationConstants } from './models/calculation-constants';
 import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 import { SizeConstants } from './models/size-constants';
 import { DogsAgeCalculatorService } from './services/dogs-age-calculator.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dogs-age',
   templateUrl: './dogs-age.component.html',
   styleUrls: ['./dogs-age.component.css']
 })
-export class DogsAgeComponent implements OnInit {
+export class DogsAgeComponent implements OnInit, OnDestroy {
 
   calculationTypes: any[] = CalculationConstants.calculationTypes;
   sizes: any[] = SizeConstants.sizes;
@@ -17,6 +18,7 @@ export class DogsAgeComponent implements OnInit {
   age = new FormControl(0);
   size = new FormControl('');
   sizeHidden = true;
+  subscriptions: Subscription = new Subscription();
 
   form: FormGroup;
   constructor(private formBuilder: FormBuilder,
@@ -24,7 +26,14 @@ export class DogsAgeComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.buildForm();
-    this.calculationType.valueChanges.subscribe((change: string) => this.handleCalculationChange(change));
+    const sub1 = this.calculationType
+      .valueChanges
+      .subscribe((change: string) => this.handleCalculationChange(change));
+    this.subscriptions.add(sub1);
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
   }
 
   private buildForm(): FormGroup {
