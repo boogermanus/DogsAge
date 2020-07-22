@@ -3,7 +3,7 @@ import { DogsAgeModule } from '../dogs-age.module';
 import { IDogsAge } from '../models/idogs-age';
 
 @Injectable({
-  providedIn: DogsAgeModule
+  providedIn: 'root'
 })
 export class DogsAgeCalculatorService {
 
