@@ -12,7 +12,7 @@ describe('DogsAgeCalculatorService', () => {
     TestBed.configureTestingModule({providers: [DogsAgeCalculatorService]});
     service = TestBed.inject(DogsAgeCalculatorService);
     dog = {
-      calculationType: CalculationConstants.DEFAULT_VALUE,
+      calculationType: CalculationConstants.CLASSIC,
       age: 0,
       size: SizeConstants.SMALL
     };

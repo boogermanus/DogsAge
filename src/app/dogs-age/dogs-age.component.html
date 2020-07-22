@@ -3,7 +3,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label>Calculation Type</label>
-                <mat-select formControlName="calculationType" class="form-control">
+                <mat-select formControlName="calculationType" class="form-control" aria-describedby="calculationTypeHelp">
                     <mat-option *ngFor="let type of calculationTypes" [value]="type.typeValue">
                         {{type.caption}}
                     </mat-option>
