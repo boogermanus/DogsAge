@@ -15,7 +15,7 @@ describe('DogsAgeCalculatorService', () => {
       calculationType: CalculationConstants.DEFAULT_VALUE,
       age: 0,
       size: SizeConstants.SMALL
-    }
+    };
   });
 
   it('should be created', () => {
@@ -24,9 +24,5 @@ describe('DogsAgeCalculatorService', () => {
 
   it('should have method calculate', () => {
     expect(() => service.calculate(dog)).toBeTruthy();
-  });
-
-  it('should return 0 for classic', () => {
-    expect(() => service.calculate(dog)).toBe(0);
   });
 });
