@@ -1,10 +1,30 @@
 <form [formGroup]="form">
     <div class="row justify-content-center mt-2">
-        <div class="col-md-2">
+        <div class="col-md-3">
             <div class="form-group">
                 <label>Calculation Type</label>
                 <mat-select formControlName="calculationType" class="form-control">
                     <mat-option *ngFor="let type of calculationTypes" [value]="type.typeValue">
+                        {{type.caption}}
+                    </mat-option>
+                </mat-select>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-2">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Age</label>
+                <input type="number" min="0" max="16" class="form-control" formControlName="age">
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-2">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Size</label>
+                <mat-select formControlName="size" class="form-control">
+                    <mat-option *ngFor="let type of sizes" [value]="type.typeValue">
                         {{type.caption}}
                     </mat-option>
                 </mat-select>
