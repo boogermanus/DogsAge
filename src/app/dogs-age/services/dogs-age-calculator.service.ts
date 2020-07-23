@@ -16,6 +16,8 @@ export class DogsAgeCalculatorService {
     switch (options.calculationType) {
       case CalculationConstants.CLASSIC:
         return this.calculateClassic(options.age);
+      case CalculationConstants.NEW:
+        return this.calculateNew(options.age);
       default:
         return 0;
     }
@@ -23,5 +25,11 @@ export class DogsAgeCalculatorService {
 
   private calculateClassic(age: number): number {
     return age * this.CLASSIC_AGE;
+  }
+
+  private calculateNew(age: number): number {
+    if (age === 0) {
+      return 0;
+    }
   }
 }

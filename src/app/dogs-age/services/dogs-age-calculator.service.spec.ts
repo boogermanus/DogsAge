@@ -35,4 +35,14 @@ describe('DogsAgeCalculatorService', () => {
     expect(service.calculate(dog)).toBe(7);
   });
 
+  it('should calculate new dogs age 0', () => {
+    dog.calculationType = CalculationConstants.NEW;
+    expect(service.calculate(dog)).toBe(0);
+  });
+
+  it('should calculate new dogs age 31', () => {
+    dog.calculationType = CalculationConstants.NEW;
+    dog.age = 1;
+    expect(service.calculate(dog)).toBe(31);
+  });
 });
