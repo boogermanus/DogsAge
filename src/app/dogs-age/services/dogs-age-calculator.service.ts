@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { DogsAgeModule } from '../dogs-age.module';
 import { IDogsAge } from '../models/idogs-age';
 import { CalculationConstants } from '../models/calculation-constants';
 
