@@ -25,4 +25,14 @@ describe('DogsAgeCalculatorService', () => {
   it('should have method calculate', () => {
     expect(() => service.calculate(dog)).toBeTruthy();
   });
+
+  it('should calculate classic dogs age 0', () => {
+    expect(service.calculate(dog)).toBe(0);
+  });
+
+  it('should calculate classic dogs age 7', () => {
+    dog.age = 1;
+    expect(service.calculate(dog)).toBe(7);
+  });
+
 });
