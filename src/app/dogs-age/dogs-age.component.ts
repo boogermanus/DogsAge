@@ -19,6 +19,7 @@ export class DogsAgeComponent implements OnInit, OnDestroy {
   size = new FormControl('');
   sizeHidden = true;
   subscriptions: Subscription = new Subscription();
+  dogsAge = 0;
 
   form: FormGroup;
   constructor(private formBuilder: FormBuilder,
@@ -51,5 +52,13 @@ export class DogsAgeComponent implements OnInit, OnDestroy {
     else {
       this.sizeHidden = true;
     }
+  }
+
+  public calculate() {
+    this.dogsAge = this.dogsAgeCalculator.calculate({
+      calculationType: this.calculationType.value,
+      age: this.age.value,
+      size: this.size.value
+    });
   }
 }

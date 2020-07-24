@@ -23,4 +23,14 @@ describe('DogsAgeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should calculate dogs age 0', () => {
+    component.calculate();
+    expect(component.dogsAge).toBe(0);
+  });
+  it('should calculate dogs age greater than 0', () => {
+    component.age.setValue(1);
+    component.calculate();
+    expect(component.dogsAge).toBeGreaterThan(0);
+  });
 });
