@@ -24,6 +24,7 @@
                         <div class="form-group">
                             <label>Age</label>
                             <input type="number" min="0" max="16" class="form-control" formControlName="age">
+                            <label class="alert alert-danger mt-1" *ngIf="ageInvalid">Age is invalid</label>
                         </div>
                     </div>
                 </div>
@@ -42,7 +43,7 @@
             </form>
         </mat-card-content>
         <mat-card-actions>
-            <button class="btn btn-primary ml-2" (click)="calculate()">Calculate</button>
+            <button class="btn btn-primary ml-2" (click)="calculate()" [disabled]="!form.valid">Calculate</button>
         </mat-card-actions>
         <mat-card-footer>
             <div class="row mt-4 ml-2">

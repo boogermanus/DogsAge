@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CalculationConstants } from './models/calculation-constants';
-import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
+import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SizeConstants } from './models/size-constants';
 import { DogsAgeCalculatorService } from './services/dogs-age-calculator.service';
 import { Subscription } from 'rxjs';
@@ -15,11 +15,19 @@ export class DogsAgeComponent implements OnInit, OnDestroy {
   calculationTypes: any[] = CalculationConstants.calculationTypes;
   sizes: any[] = SizeConstants.sizes;
   calculationType = new FormControl(CalculationConstants.CLASSIC);
-  age = new FormControl(0);
+  age = new FormControl(0, Validators.compose([
+    Validators.required,
+    Validators.min(0),
+    Validators.max(16)
+  ]));
   size = new FormControl(SizeConstants.SMALL);
   sizeHidden = true;
   subscriptions: Subscription = new Subscription();
   dogsAge = 0;
+
+  get ageInvalid(): boolean {
+    return !this.age.valid && this.age.touched;
+  }
 
   form: FormGroup;
   constructor(private formBuilder: FormBuilder,

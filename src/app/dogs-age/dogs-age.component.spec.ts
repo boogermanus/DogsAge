@@ -33,4 +33,16 @@ describe('DogsAgeComponent', () => {
     component.calculate();
     expect(component.dogsAge).toBeGreaterThan(0);
   });
+  it('should have error min for negative age', () => {
+    component.age.setValue(-1);
+    expect(component.age.hasError('min')).toBeTrue();
+  });
+  it('should have error max for age greater than 16', () => {
+    component.age.setValue(17);
+    expect(component.age.hasError('max')).toBeTrue();
+  });
+  it('should not error for age 1', () => {
+    component.age.setValue(1);
+    expect(component.age.valid).toBeTrue();
+  });
 });
