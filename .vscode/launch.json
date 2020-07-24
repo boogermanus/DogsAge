@@ -23,7 +23,7 @@
             "request": "attach",
             "name": "Unit Tests",
             "address": "localhost",
-            "port": 9222,
+            "port": 9333,
             "sourceMaps": true,
             "webRoot": "${workspaceFolder}",
             "pathMapping": {
