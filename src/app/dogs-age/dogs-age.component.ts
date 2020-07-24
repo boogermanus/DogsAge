@@ -24,6 +24,7 @@ export class DogsAgeComponent implements OnInit, OnDestroy {
   sizeHidden = true;
   subscriptions: Subscription = new Subscription();
   dogsAge = 0;
+  calculationTypeText = '';
 
   get ageInvalid(): boolean {
     return !this.age.valid && this.age.touched;
@@ -39,6 +40,7 @@ export class DogsAgeComponent implements OnInit, OnDestroy {
       .valueChanges
       .subscribe((change: string) => this.handleCalculationChange(change));
     this.subscriptions.add(sub1);
+    this.calculationTypeText = this.dogsAgeCalculator.getCalculationTypeDescription(CalculationConstants.CLASSIC);
   }
 
   ngOnDestroy(): void {
@@ -60,6 +62,8 @@ export class DogsAgeComponent implements OnInit, OnDestroy {
     else {
       this.sizeHidden = true;
     }
+
+    this.calculationTypeText = this.dogsAgeCalculator.getCalculationTypeDescription(change);
   }
 
   public calculate() {
