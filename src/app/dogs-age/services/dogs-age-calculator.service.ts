@@ -144,7 +144,7 @@ export class DogsAgeCalculatorService {
         break;
       case CalculationConstants.EXOTIC:
         value.push('A custom equation; this equation takes into account the size of the dog.');
-        value.push('The numbers produced seem move believable than Classic or New.');
+        value.push('The numbers produced seem more believable than Classic or New.');
     }
 
     return value.join(' ');
