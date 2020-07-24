@@ -9,13 +9,14 @@
             "port": 9222,
             "request": "attach",
             "type": "chrome",
+            "urlFilter": "http://localhost:4200/*",
             "webRoot": "${workspaceFolder}"
         },
         {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost:4200",
+            "url": "http://localhost4200/",
             "webRoot": "${workspaceFolder}"
         },
         {
