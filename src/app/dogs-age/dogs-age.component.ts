@@ -16,7 +16,7 @@ export class DogsAgeComponent implements OnInit, OnDestroy {
   sizes: any[] = SizeConstants.sizes;
   calculationType = new FormControl(CalculationConstants.CLASSIC);
   age = new FormControl(0);
-  size = new FormControl('');
+  size = new FormControl(SizeConstants.SMALL);
   sizeHidden = true;
   subscriptions: Subscription = new Subscription();
   dogsAge = 0;
