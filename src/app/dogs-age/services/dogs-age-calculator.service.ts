@@ -136,15 +136,15 @@ export class DogsAgeCalculatorService {
     switch (type) {
       case CalculationConstants.CLASSIC:
         value.push('The classic equation, each year of a dogs life is equal to 7 human years.');
-        value.push('Is now reguarded as inaccurate');
+        value.push('Is now regarded as inaccurate.');
         break;
       case CalculationConstants.NEW:
-        value.push('A new equation, 16 * ln(age) + 31; This equation produces some strange results.');
+        value.push('A new equation popularized by the media, 16 * ln(age) + 31; This equation produces some strange results.');
         value.push('A 1 year old dog is calculated as 31 human years, and the max possible is only 75.');
         break;
       case CalculationConstants.EXOTIC:
         value.push('A custom equation; this equation takes into account the size of the dog.');
-        value.push('The numbers produced seem move believeable than Classic or New.');
+        value.push('The numbers produced seem move believable than Classic or New.');
     }
 
     return value.join(' ');
