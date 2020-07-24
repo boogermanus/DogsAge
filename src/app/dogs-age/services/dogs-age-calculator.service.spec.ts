@@ -3,7 +3,7 @@ import { DogsAgeCalculatorService } from './dogs-age-calculator.service';
 import { IDogsAge } from '../models/idogs-age';
 import { CalculationConstants } from '../models/calculation-constants';
 import { SizeConstants } from '../models/size-constants';
-import { expressionType } from '@angular/compiler/src/output/output_ast';
+
 
 describe('DogsAgeCalculatorService', () => {
   let service: DogsAgeCalculatorService;
