@@ -59,6 +59,8 @@ export class DogsAgeCalculatorService {
         return this.calculateExoticSmall(options.age);
       case SizeConstants.MEDIUM:
         return this.calculateExoticMedium(options.age);
+      case SizeConstants.LARGE:
+        return this.calculateExoticLarge(options.age);
     }
   }
 
@@ -89,10 +91,42 @@ export class DogsAgeCalculatorService {
         return 47;
       case (age > 7):
         if (age % 2 === 0) {
-          return  (age - 6) / 2 * 9 + 42;
+          return (age - 6) / 2 * 9 + 42;
         }
         else {
           return (age - 7) / 2 * 9 + 47;
+        }
+    }
+  }
+
+  private calculateExoticLarge(age: number): number {
+    switch (true) {
+      case (age <= 5):
+        return this.calculateExoticSmall(age);
+      case (age === 6):
+        return 45;
+      case (age < 9):
+        return (age - 6) * 5 + 45;
+      case (age >= 9):
+        switch (age) {
+          case 9:
+            return 61;
+          case 10:
+            return 66;
+          case 11:
+            return 72;
+          case 12:
+            return 77;
+          case 13:
+            return 82;
+          case 14:
+            return 88;
+          case 15:
+            return 93;
+          case 16:
+            return 120;
+          default:
+            return 120;
         }
     }
   }

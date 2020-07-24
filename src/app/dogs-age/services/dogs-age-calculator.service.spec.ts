@@ -98,4 +98,10 @@ describe('DogsAgeCalculatorService', () => {
     dog.age = 9;
     expect(service.calculate(dog)).toBe(56);
   });
+  it('should calculate exotic large dogs age 55', () => {
+    dog.calculationType = CalculationConstants.EXOTIC;
+    dog.size = SizeConstants.LARGE;
+    dog.age = 8;
+    expect(service.calculate(dog)).toBe(55);
+  });
 });
