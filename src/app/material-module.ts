@@ -1,7 +1,7 @@
 
 import { NgModule } from '@angular/core';
-import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select';
-import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   imports: [
     MatSelectModule,
