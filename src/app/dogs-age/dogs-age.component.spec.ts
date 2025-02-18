@@ -1,18 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DogsAgeComponent } from './dogs-age.component';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
 
 describe('DogsAgeComponent', () => {
   let component: DogsAgeComponent;
   let fixture: ComponentFixture<DogsAgeComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [ DogsAgeComponent ],
+      imports: [
+        MatSelectModule,
+        MatCardModule,
+        ReactiveFormsModule
+      ],
       providers: [FormBuilder]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DogsAgeComponent);
