@@ -58,13 +58,7 @@ export class DogsAgeComponent implements OnInit, OnDestroy {
   }
 
   private handleCalculationChange(change: string | null) {
-    if (change === CalculationConstants.EXOTIC) {
-      this.sizeHidden = false;
-    }
-    else {
-      this.sizeHidden = true;
-    }
-
+    this.sizeHidden = change !== CalculationConstants.EXOTIC;
     this.calculationTypeText = this.dogsAgeCalculator.getCalculationTypeDescription(change);
   }
 
