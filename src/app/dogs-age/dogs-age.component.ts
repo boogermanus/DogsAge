@@ -6,9 +6,10 @@ import { DogsAgeCalculatorService } from './services/dogs-age-calculator.service
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-dogs-age',
-  templateUrl: './dogs-age.component.html',
-  styleUrls: ['./dogs-age.component.css']
+    selector: 'app-dogs-age',
+    templateUrl: './dogs-age.component.html',
+    styleUrls: ['./dogs-age.component.css'],
+    standalone: false
 })
 export class DogsAgeComponent implements OnInit, OnDestroy {
 
